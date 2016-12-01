@@ -1,49 +1,151 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
+<html lang="en">
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/themes/estiloformulario.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <!--EJERCICIO: HACER UNA PANTALLA DE LOGIN CON:
+        -PERFIL CON LOS DATOS
+        -RAMOS CON LOS RAMOS QUE HAY
+        -ACCESORIOS
+        -CENTROS(LUGARES)QUE HAY
+
+    HACER UN FOOTER CON: CONTACTAR PEDIDOS Y WEB-->
+        
+               
+        <!--LOGIN-->        
+            <div data-role="page"  id="pagina1">
+                <div data-role="header">
+                   <h2>LOGIN</h2>
+                </div>
+               
+                <div data-role="main" class="ui-content">
+                    <form id="cuenta">
+                        <label for="electronico"></label>
+                        <input id="electronico" type="text" name="correo" value="" placeholder="CORREO ELECTRONICO">
+
+                        <label  for="password1"></label>
+                        <input id="password1" name="password" type="password" value="" placeholder="CONTRASEÑA"/>
+
+                        <label for="password2"></label>
+                        <input id="password2" name="password" type="password" value="" placeholder="REPETIR CONTRASEÑA" />
+                    </form>
+                    <a class="ui-btn" href="#pagina2" data-transition="pop">ENTRAR</a>
+                    <a class="ui-btn" href="#pagina3">REGISTRARSE</a>
+                </div> 
+            </div> 
+        <!--PAGINA 2 PERFIL PERSONAL-->
+            <div data-role="page" id="pagina2">
+                <div data-role="header">
+                   <h2>PERFIL PERSONAL</h2>
+			        <a href="#pagina1" data-transition="fade" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-home">Inicio</a>
+                    <a href="#pagina1" data-transition="slideup"  class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-power">Inicio</a>
+                </div>
+                 <div data-role="main" class="ui-content">
+                    <a class="ui-btn" href="#pagina4" data-transition="pop">MI PERFIL</a><br>
+                    <a class="ui-btn" href="#pagina5" data-transition="pop">RAMOS</a><br>
+                    <a class="ui-btn" href="#pagina6" data-transition="pop">ACCESORIOS</a><br>
+                    <a class="ui-btn" href="#pagina7" data-transition="pop">LOCALES</a><br>
+                </div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar" data-iconpos="top">
+                        <ul>
+                            <li><a data-transition="fade" data-icon="phone" id="id5" href="#contactar">CONTACTAR</a></li>
+                            <li><a data-transition="fade" data-icon="plus" id="id4" href="javascript">PEDIDOS</a></li>
+                            <li><a href="WEB" data-transition="fade" data-icon="grid" data-rel="dialog" data-theme="a">WEB</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+
+        <!--PAGINA 4 MI PERFIL-->
+
+                <div data-role="page" id="pagina4">
+                    <div data-role="header">
+                        <h2>MI PERFIL</h2>
+                        <a href="#pagina2" data-transition="fade" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-home">Inicio</a>
+                        <a href="#pagina1" data-transition="slideup" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-power">Inicio</a>
+                    </div> 
+                    <div data-role="footer" data-position="fixed">
+                        <div data-role="navbar" data-iconpos="top">
+                            <ul>
+                                <li><a data-transition="fade" data-icon="phone" id="id5" href="#contactar">CONTACTAR</a></li>
+                                <li><a data-transition="fade" data-icon="plus" id="id4" href="javascript">PEDIDOS</a></li>
+                                <li><a href="WEB" data-transition="fade" data-icon="grid" data-rel="dialog" data-theme="a">WEB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+    <!--PAGINA 5 RAMOS-->
+                <div data-role="page" id="pagina5">
+                    <div data-role="header">
+                        <h2>RAMOS</h2>
+                        <a href="#pagina2" data-transition="fade" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-home">Inicio</a>
+                         <a href="#pagina1" data-transition="slideup" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-power">Inicio</a>
+                    </div>
+                    <div data-role="footer" data-position="fixed">
+                        <div data-role="navbar" data-iconpos="top">
+                            <ul>
+                                <li><a data-transition="fade" data-icon="phone" id="id5" href="#contactar">CONTACTAR</a></li>
+                                <li><a data-transition="fade" data-icon="plus" id="id4" href="javascript">PEDIDOS</a></li>
+                                <li><a href="WEB" data-transition="fade" data-icon="grid" data-rel="dialog" data-theme="a">WEB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+<!--PAGINA 6 ACCESORIOS-->
+            <div data-role="page" id="pagina6">
+                    <div data-role="header">
+                        <h2>ACCESORIOS</h2>
+                        <a href="#pagina2" data-transition="fade" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-home">Inicio</a>
+                         <a href="#pagina1" data-transition="slideup" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-power">Inicio</a>
+                    </div>
+                    <div data-role="footer" data-position="fixed">
+                        <div data-role="navbar" data-iconpos="top">
+                            <ul>
+                                <li><a data-transition="fade" data-icon="phone" id="id5" href="#contactar">CONTACTAR</a></li>
+                                <li><a data-transition="fade" data-icon="plus" id="id4" href="javascript">PEDIDOS</a></li>
+                                <li><a href="WEB" data-transition="fade" data-icon="grid" data-rel="dialog" data-theme="a">WEB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
+<!--PAGINA 7 LOCALES-->
+             <div data-role="page" id="pagina7">
+                    <div data-role="header">
+                        <h2>LOCALES</h2>
+                        <a href="#pagina2" data-transition="fade" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-home">Inicio</a>
+                         <a href="#pagina1" data-transition="slidedown" class="ui-btn ui-mini ui-corner-all ui-btn-icon-left ui-btn-icon-notext ui-icon-power">Inicio</a>
+                    </div>
+                    <div data-role="footer" data-position="fixed">
+                        <div data-role="navbar" data-iconpos="top">
+                            <ul>
+                                <li><a data-transition="fade" data-icon="phone" id="id5" href="#contactar">CONTACTAR</a></li>
+                                <li><a data-transition="fade" data-icon="plus" id="id4" href="javascript">PEDIDOS</a></li>
+                                <li><a href="WEB" data-transition="fade" data-icon="grid" data-rel="dialog" data-theme="a">WEB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
+
+
+
+
+
+
+
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     </body>
 </html>
